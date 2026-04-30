@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { AnimatedSection } from "@/components/animated-section"
@@ -8,9 +8,84 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { BookOpen, Feather, ExternalLink } from "lucide-react"
 import { useEffect, useState } from "react"
+import { useSiteLanguage } from "@/lib/use-site-language"
 
 export default function WorkPage() {
   const [mounted, setMounted] = useState(false)
+  const language = useSiteLanguage()
+
+  const content =
+    language === "fr"
+      ? {
+          eyebrow: "Portfolio",
+          title: "Œuvres publiées et écriture",
+          intro:
+            "Explorez une sélection de romans, poèmes, essais et présences médiatiques qui témoignent de la richesse d'une écriture littéraire haïtienne.",
+          featuredWork: "Œuvres phares",
+          writingSamples: "Extraits d'écriture",
+          publishedWork: "Publications",
+          cards: {
+            learnMore: "En savoir plus",
+            availableOnAmazon: "Disponible sur Amazon",
+            featuredNovel:
+              "Un roman saisissant qui dépeint la résilience d'une ville et de ses habitants au milieu du chaos. Suivez Mila dans les paysages émotionnels et physiques de Port-au-Prince, une ville à la fois berceau des rêves et champ de bataille des espoirs brisés.",
+            featuredPoetry:
+              "Un recueil de poésie qui explore l'expérience haïtienne intime et collective à travers quatre longs poèmes en créole haïtien. Une bouteille d'eau de mer qui raconte comment une jeune femme en fleur porte en elle la vie, le désespoir, l'amour et tout un pays.",
+            poetry: "Poésie",
+            poetryText:
+              "Un recueil qui tisse l'imaginaire culturel et l'introspection personnelle. L'essence d'une poésie de jeune fille noire qui danse et joue à cache-cache avec le temps. Du miel et du sel. Un peu de joie au milieu de tant d'ombres.",
+            fiction: "Fiction",
+            fictionText:
+              "Le roman suit Mila, une jeune femme qui traverse les paysages émotionnels et physiques d'une ville en proie au chaos. Port-au-Prince y devient plus qu'un décor: un personnage à part entière, entre berceau des rêves et champ de bataille des espoirs brisés. C'est une histoire de survie, des êtres, des liens et d'une ville qui refuse de céder au désespoir.",
+            availableAt: "Disponible à la Librairie La Pléïade, Haïti",
+            poetryCollection: "Recueil de poésie",
+            essays: "Essais, articles et médias",
+            review: "Chronique dans L'Avant-Gardiste",
+            article: "Article du Nouvelliste",
+            feature: "Parution dans Le Temps Littéraire",
+            interview: "Entrevue dans Le Nouvelliste",
+            video: "Entrevue vidéo",
+            readingsTitle: "Disponible pour des lectures et des conversations littéraires",
+            readingsText:
+              "Ce portfolio constitue une archive vivante de livres publiés, d'articles de presse et d'interventions publiques. Des extraits choisis et d'autres documents peuvent être partagés pour des événements et des programmations.",
+          },
+          portraitAlt: "Portrait de Stéphana Dorval",
+        }
+      : {
+          eyebrow: "Portfolio",
+          title: "Published Works & Writing",
+          intro:
+            "Explore a collection of published novels, poetry, essays, and media features showcasing the depth of Haitian literary artistry.",
+          featuredWork: "Featured Work",
+          writingSamples: "Writing Samples",
+          publishedWork: "Published Work",
+          cards: {
+            learnMore: "Learn more",
+            availableOnAmazon: "Available on Amazon",
+            featuredNovel:
+              "A gripping novel that portrays the resilience of a city and its people amidst chaos. Follow Mila as she navigates the emotional and physical landscapes of Port-au-Prince—a city that is both a cradle of dreams and a battleground of broken hopes.",
+            featuredPoetry:
+              "A collection of poetry that delves into the personal and collective Haitian experience through four long poems written in Haitian Creole. A seawater bottle telling how a blossoming young woman carries within her life, despair, love, and an entire country.",
+            poetry: "Poetry",
+            poetryText:
+              "A collection that weaves cultural imagery with personal introspection. The essence of the poetry of a black girl who dances while playing hide and seek over time. Honey and salt. A little bit of joy within so many shadows.",
+            fiction: "Fiction",
+            fictionText:
+              "The novel follows Mila, a young woman who navigates the emotional and physical landscapes of a city engulfed in chaos. Port-au-Prince is more than just a backdrop; it is a character in itself—both a cradle of dreams and a battleground of broken hopes. This is a story about survival—of individuals, of relationships, and of a city that refuses to surrender to despair.",
+            availableAt: "Available at Librairie La Pléïade, Haïti",
+            poetryCollection: "Poetry Collection",
+            essays: "Essays, Articles & Media",
+            review: "L'Avant-Gardiste Review",
+            article: "Le Nouvelliste Article",
+            feature: "Le Temps Littéraire Feature",
+            interview: "Le Nouvelliste Interview",
+            video: "Video Interview",
+            readingsTitle: "Available for readings and literary conversations",
+            readingsText:
+              "This portfolio is a living archive of published books, press features, and public interventions. Selected excerpts and additional materials can be shared for events and programming inquiries.",
+          },
+          portraitAlt: "Stephana portrait",
+        }
 
   useEffect(() => {
     setMounted(true)
@@ -27,19 +102,32 @@ export default function WorkPage() {
             <div
               className={`mb-6 text-sm text-muted-foreground tracking-wide uppercase transition-all duration-700 delay-100 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             >
-              Portfolio
+              {content.eyebrow}
             </div>
             <h1
               className={`text-4xl md:text-6xl lg:text-7xl font-serif mb-8 leading-tight text-balance transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
-              Published Works & Writing
+              {content.title}
             </h1>
             <p
               className={`text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl text-pretty transition-all duration-700 delay-500 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
-              Explore a collection of published novels, poetry, essays, and media features showcasing the depth of
-              Haitian literary artistry.
+              {content.intro}
             </p>
+          </div>
+        </section>
+
+        <section className="container mx-auto px-4 pb-20">
+          <div className="grid md:grid-cols-3 gap-4 max-w-6xl">
+            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
+              <Image src="/stephana-portrait-2.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+            </div>
+            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
+              <Image src="/stephana-portrait-3.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+            </div>
+            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
+              <Image src="/stephana-portrait-4.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+            </div>
           </div>
         </section>
 
@@ -47,7 +135,7 @@ export default function WorkPage() {
         <section className="container mx-auto px-4 py-20 border-t border-border/50">
           <AnimatedSection>
             <div className="mb-16">
-              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">Featured Work</h2>
+              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">{content.featuredWork}</h2>
             </div>
           </AnimatedSection>
 
@@ -60,9 +148,7 @@ export default function WorkPage() {
                     Port-au-Prince: Mon brasier de ville
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    A gripping novel that portrays the resilience of a city and its people amidst chaos. Follow Mila as
-                    she navigates the emotional and physical landscapes of Port-au-Prince—a city that is both a cradle
-                    of dreams and a battleground of broken hopes.
+                    {content.cards.featuredNovel}
                   </p>
                 </div>
                 <div className="mt-6">
@@ -72,7 +158,7 @@ export default function WorkPage() {
                     asChild
                   >
                     <a href="#published" className="flex items-center gap-2">
-                      Learn more
+                      {content.cards.learnMore}
                       <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                   </Button>
@@ -88,9 +174,7 @@ export default function WorkPage() {
                     Siwomyèl ak Sèl
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    A collection of poetry that delves into the personal and collective Haitian experience through four
-                    long poems written in Haitian Creole. A seawater bottle telling how a blossoming young woman carries
-                    within her life, despair, love, and an entire country.
+                    {content.cards.featuredPoetry}
                   </p>
                 </div>
                 <div className="mt-6">
@@ -105,7 +189,7 @@ export default function WorkPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      Available on Amazon
+                      {content.cards.availableOnAmazon}
                       <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                   </Button>
@@ -119,32 +203,27 @@ export default function WorkPage() {
         <section className="container mx-auto px-4 py-20 border-t border-border/50">
           <AnimatedSection>
             <div className="mb-16">
-              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">Writing Samples</h2>
+              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">{content.writingSamples}</h2>
             </div>
           </AnimatedSection>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl">
             <AnimatedSection delay={100}>
               <Card className="p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
-                <h3 className="font-serif text-xl mb-3">Poetry</h3>
+                <h3 className="font-serif text-xl mb-3">{content.cards.poetry}</h3>
                 <p className="text-sm text-muted-foreground mb-4">Siwomyèl ak Sèl</p>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  A collection that weaves cultural imagery with personal introspection. The essence of the poetry of a
-                  black girl who dances while playing hide and seek over time. Honey and salt. A little bit of joy
-                  within so many shadows.
+                  {content.cards.poetryText}
                 </p>
               </Card>
             </AnimatedSection>
 
             <AnimatedSection delay={200} className="lg:col-span-2">
               <Card className="p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20">
-                <h3 className="font-serif text-xl mb-3">Fiction</h3>
+                <h3 className="font-serif text-xl mb-3">{content.cards.fiction}</h3>
                 <p className="text-sm text-muted-foreground mb-4">Port-au-Prince: Mon brasier de ville</p>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  The novel follows Mila, a young woman who navigates the emotional and physical landscapes of a city
-                  engulfed in chaos. Port-au-Prince is more than just a backdrop; it is a character in itself—both a
-                  cradle of dreams and a battleground of broken hopes. This is a story about survival—of individuals, of
-                  relationships, and of a city that refuses to surrender to despair.
+                  {content.cards.fictionText}
                 </p>
               </Card>
             </AnimatedSection>
@@ -155,7 +234,7 @@ export default function WorkPage() {
         <section id="published" className="container mx-auto px-4 py-20 border-t border-border/50">
           <AnimatedSection>
             <div className="mb-16">
-              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">Published Work</h2>
+              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">{content.publishedWork}</h2>
             </div>
           </AnimatedSection>
 
@@ -163,7 +242,7 @@ export default function WorkPage() {
             <AnimatedSection delay={100}>
               <div className="pb-8 border-b border-border/50 transition-all duration-300 hover:border-primary/30">
                 <h3 className="font-serif text-2xl mb-2">Port-au-Prince: Mon brasier de ville</h3>
-                <p className="text-muted-foreground mb-4">Available at Librairie La Pléïade, Haïti</p>
+                <p className="text-muted-foreground mb-4">{content.cards.availableAt}</p>
                 <div className="flex flex-wrap gap-3">
                   <Button
                     variant="outline"
@@ -177,7 +256,7 @@ export default function WorkPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      L'Avant-Gardiste Review
+                      {content.cards.review}
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </Button>
@@ -193,7 +272,7 @@ export default function WorkPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      Le Nouvelliste Article
+                      {content.cards.article}
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </Button>
@@ -204,7 +283,7 @@ export default function WorkPage() {
             <AnimatedSection delay={200}>
               <div className="pb-8 border-b border-border/50 transition-all duration-300 hover:border-primary/30">
                 <h3 className="font-serif text-2xl mb-2">Siwomyèl ak sèl</h3>
-                <p className="text-muted-foreground mb-4">Poetry Collection</p>
+                <p className="text-muted-foreground mb-4">{content.cards.poetryCollection}</p>
                 <Button
                   variant="outline"
                   size="sm"
@@ -217,7 +296,7 @@ export default function WorkPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    Available on Amazon
+                    {content.cards.availableOnAmazon}
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </Button>
@@ -226,7 +305,7 @@ export default function WorkPage() {
 
             <AnimatedSection delay={300}>
               <div>
-                <h3 className="font-serif text-2xl mb-4">Essays, Articles & Media</h3>
+                <h3 className="font-serif text-2xl mb-4">{content.cards.essays}</h3>
                 <div className="space-y-3">
                   <Button
                     variant="link"
@@ -239,7 +318,7 @@ export default function WorkPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      Le Temps Littéraire Feature
+                      {content.cards.feature}
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
@@ -254,7 +333,7 @@ export default function WorkPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      Le Nouvelliste Interview
+                      {content.cards.interview}
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
@@ -269,7 +348,7 @@ export default function WorkPage() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
                     >
-                      Video Interview
+                      {content.cards.video}
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
@@ -277,6 +356,22 @@ export default function WorkPage() {
               </div>
             </AnimatedSection>
           </div>
+        </section>
+
+        <section className="container mx-auto px-4 py-20 border-t border-border/50">
+          <AnimatedSection>
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
+              <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "4 / 5" }}>
+                <Image src="/stephana-portrait-1.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-serif mb-4">{content.cards.readingsTitle}</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {content.cards.readingsText}
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
         </section>
       </main>
 

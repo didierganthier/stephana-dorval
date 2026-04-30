@@ -1,17 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Crimson_Text, Inter } from "next/font/google"
+import { Cormorant_Garamond, Jost } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import "./globals.css"
 
-const crimsonText = Crimson_Text({
-  weight: ["400", "600", "700"],
+const cormorant = Cormorant_Garamond({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-serif",
 })
 
-const inter = Inter({
+const jost = Jost({
   subsets: ["latin"],
   variable: "--font-sans",
 })
@@ -79,19 +79,22 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
+        url: "/favicon-32.png",
+        sizes: "32x32",
+        type: "image/png",
       },
       {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
+        url: "/favicon-64.png",
+        sizes: "64x64",
+        type: "image/png",
       },
       {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/favicon-256.png",
+        sizes: "256x256",
+        type: "image/png",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/favicon-256.png",
   },
   alternates: {
     canonical: "https://stephana-dorval.vercel.app",
@@ -176,7 +179,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={`${inter.variable} ${crimsonText.variable} font-sans antialiased`}>
+      <body className={`${jost.variable} ${cormorant.variable} font-sans antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"

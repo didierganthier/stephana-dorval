@@ -7,9 +7,36 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Home, BookOpen, Mail, ArrowLeft } from "lucide-react"
 import { useEffect, useState } from "react"
+import { useSiteLanguage } from "@/lib/use-site-language"
 
 export default function NotFound() {
   const [mounted, setMounted] = useState(false)
+  const language = useSiteLanguage()
+
+  const content =
+    language === "fr"
+      ? {
+          title: "Page introuvable",
+          description:
+            "La page que vous cherchez semble s'être égarée comme un personnage en quête de sa propre histoire. Revenons au bon endroit.",
+          cards: [
+            { title: "Accueil", text: "Retourner à la page d'accueil", cta: "Aller à l'accueil" },
+            { title: "Mon œuvre", text: "Explorer les publications", cta: "Voir l'œuvre" },
+            { title: "Contact", text: "Entrer en contact", cta: "Me contacter" },
+          ],
+          back: "Retour à l'accueil",
+        }
+      : {
+          title: "Page Not Found",
+          description:
+            "The page you're looking for seems to have wandered off like a character in search of their own story. Let's get you back on track.",
+          cards: [
+            { title: "Home", text: "Return to the homepage", cta: "Go Home" },
+            { title: "My Work", text: "Explore published works", cta: "View Work" },
+            { title: "Contact", text: "Get in touch", cta: "Contact Me" },
+          ],
+          back: "Back to Homepage",
+        }
 
   useEffect(() => {
     setMounted(true)
@@ -26,35 +53,34 @@ export default function NotFound() {
               className={`transition-all duration-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               <h1 className="text-9xl font-serif text-primary mb-4">404</h1>
-              <h2 className="text-3xl md:text-4xl font-serif mb-6">Page Not Found</h2>
+              <h2 className="text-3xl md:text-4xl font-serif mb-6">{content.title}</h2>
               <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-                The page you're looking for seems to have wandered off like a character in search of their own story.
-                Let's get you back on track.
+                {content.description}
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 mb-12">
                 <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <Home className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-serif mb-2">Home</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Return to the homepage</p>
+                  <h3 className="font-serif mb-2">{content.cards[0].title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{content.cards[0].text}</p>
                   <Button variant="link" className="p-0 h-auto" asChild>
-                    <Link href="/">Go Home</Link>
+                    <Link href="/">{content.cards[0].cta}</Link>
                   </Button>
                 </Card>
                 <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-serif mb-2">My Work</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Explore published works</p>
+                  <h3 className="font-serif mb-2">{content.cards[1].title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{content.cards[1].text}</p>
                   <Button variant="link" className="p-0 h-auto" asChild>
-                    <Link href="/work">View Work</Link>
+                    <Link href="/work">{content.cards[1].cta}</Link>
                   </Button>
                 </Card>
                 <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <h3 className="font-serif mb-2">Contact</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Get in touch</p>
+                  <h3 className="font-serif mb-2">{content.cards[2].title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{content.cards[2].text}</p>
                   <Button variant="link" className="p-0 h-auto" asChild>
-                    <Link href="/contact">Contact Me</Link>
+                    <Link href="/contact">{content.cards[2].cta}</Link>
                   </Button>
                 </Card>
               </div>
@@ -62,7 +88,7 @@ export default function NotFound() {
               <Button size="lg" variant="outline" className="bg-transparent" asChild>
                 <Link href="/" className="flex items-center gap-2">
                   <ArrowLeft className="w-4 h-4" />
-                  Back to Homepage
+                  {content.back}
                 </Link>
               </Button>
             </div>

@@ -5,10 +5,13 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { LanguageToggle } from "@/components/language-toggle"
+import { useSiteLanguage } from "@/lib/use-site-language"
 
 export function Navigation() {
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const language = useSiteLanguage()
   const pathname = usePathname()
 
   useEffect(() => {
@@ -19,12 +22,20 @@ export function Navigation() {
     setMobileMenuOpen(false)
   }, [pathname])
 
-  const navLinks = [
-    { href: "/work", label: "Work" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
-  ]
+  const navLinks =
+    language === "fr"
+      ? [
+          { href: "/work", label: "Œuvre" },
+          { href: "/about", label: "À propos" },
+          { href: "/services", label: "Services" },
+          { href: "/contact", label: "Contact" },
+        ]
+      : [
+          { href: "/work", label: "Work" },
+          { href: "/about", label: "About" },
+          { href: "/services", label: "Services" },
+          { href: "/contact", label: "Contact" },
+        ]
 
   return (
     <header className="border-b border-border/50 sticky top-0 bg-background/95 backdrop-blur-md z-50 transition-all duration-300">
@@ -39,7 +50,7 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div
-            className={`hidden md:flex items-center gap-8 transition-all duration-700 delay-200 ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
+            className={`hidden md:flex items-center gap-6 transition-all duration-700 delay-200 ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
           >
             {navLinks.map((link) => (
               <Link
@@ -54,6 +65,7 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,6 +97,9 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2">
+                <LanguageToggle />
+              </div>
             </div>
           </div>
         )}

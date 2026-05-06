@@ -23,9 +23,6 @@ export default function ServicesPage() {
           intro:
             "Un studio créatif et éditorial centré sur le langage, la culture et la clarté. Accent Aigu accompagne les personnes, les marques et les organisations dans la création de mots qui touchent juste.",
           cta: "Réserver un appel découverte",
-          brandTitle: "Signature de marque",
-          brandText:
-            "L'identité d'Atelier Accent Aigu fait partie intégrante de l'expérience: précise, affirmée et expressive. Son langage visuel prolonge les mêmes exigences éditoriales que chaque collaboration.",
           services: [
             {
               title: "Direction éditoriale",
@@ -54,10 +51,7 @@ export default function ServicesPage() {
           finalTitle: "Lancer un projet avec Accent Aigu",
           finalText:
             "Si vous avez besoin d'une direction éditoriale, d'un texte convaincant ou d'un travail d'affinement, construisons ensemble les mots justes pour la suite.",
-          portraitAlt: "Portrait de Stéphana Dorval",
           logoAlt: "Logo Atelier Accent Aigu",
-          iconAlt: "Icône Accent Aigu",
-          iconVariantAlt: "Variante de l'icône Accent Aigu",
           calendlyLink: "https://calendly.com/stephanadorval",
         }
       : {
@@ -66,9 +60,6 @@ export default function ServicesPage() {
           intro:
             "A creative and editorial studio centered on language, culture, and clarity. Accent Aigu supports individuals, brands, and organizations in shaping words that connect deeply.",
           cta: "Book a Discovery Call",
-          brandTitle: "Brand Signature",
-          brandText:
-            "The Atelier Accent Aigu identity is part of the experience itself: precise, bold, and expressive. The visual language mirrors the same editorial standards brought to every collaboration.",
           services: [
             {
               title: "Editorial Direction",
@@ -97,10 +88,7 @@ export default function ServicesPage() {
           finalTitle: "Start a project with Accent Aigu",
           finalText:
             "If you need editorial direction, compelling copy, or text refinement, let's build the right words for your next move.",
-          portraitAlt: "Stephana portrait",
           logoAlt: "Atelier Accent Aigu logo",
-          iconAlt: "Accent Aigu icon",
-          iconVariantAlt: "Accent Aigu icon variant",
           calendlyLink: "https://calendly.com/stephanadorval",
         }
 
@@ -156,67 +144,7 @@ export default function ServicesPage() {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
-              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "16 / 10" }}>
-                <Image
-                  src="/stephana-portrait-4.jpeg"
-                  alt={content.portraitAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-              </div>
             </div>
-          </div>
-        </section>
-
-        <section className="container mx-auto px-4 py-20 border-t border-border/50">
-          <div className="grid lg:grid-cols-2 gap-10 max-w-6xl items-center">
-            <AnimatedSection>
-              <div className="max-w-2xl">
-                <h2 className="font-serif text-3xl md:text-4xl mb-6">{content.brandTitle}</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  {content.brandText}
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <Card className="p-4 border-border/70 bg-[#edf7fb]">
-                    <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
-                      <Image
-                        src="/Icon AA.svg"
-                        alt={content.iconAlt}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 1024px) 50vw, 20vw"
-                      />
-                    </div>
-                  </Card>
-                  <Card className="p-4 border-border/70 bg-[#ff4f18]">
-                    <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
-                      <Image
-                        src="/Artboard1@2x_8.png"
-                        alt={content.iconVariantAlt}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 1024px) 50vw, 20vw"
-                      />
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={150}>
-              <Card className="p-4 md:p-6 border-border/70 bg-card/60">
-                <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "4 / 3" }}>
-                  <Image
-                    src="/atelier-accent-aigu-logo.svg"
-                    alt={content.logoAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                </div>
-              </Card>
-            </AnimatedSection>
           </div>
         </section>
 

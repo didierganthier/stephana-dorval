@@ -117,20 +117,6 @@ export default function WorkPage() {
           </div>
         </section>
 
-        <section className="container mx-auto px-4 pb-20">
-          <div className="grid md:grid-cols-3 gap-4 max-w-6xl">
-            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
-              <Image src="/stephana-portrait-2.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
-              <Image src="/stephana-portrait-3.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
-              <Image src="/stephana-portrait-4.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
-            </div>
-          </div>
-        </section>
-
         {/* Featured Work */}
         <section className="container mx-auto px-4 py-20 border-t border-border/50">
           <AnimatedSection>
@@ -362,7 +348,7 @@ export default function WorkPage() {
           <AnimatedSection>
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "4 / 5" }}>
-                <Image src="/stephana-portrait-1.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src="/stephana-portrait-5.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-serif mb-4">{content.cards.readingsTitle}</h2>

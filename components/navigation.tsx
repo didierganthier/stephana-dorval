@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -43,9 +44,27 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className={`text-xl font-serif tracking-tight transition-all duration-700 hover:text-primary ${mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
+            className={`transition-all duration-700 ${mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
+            aria-label="Stephana Dorval"
           >
-            Stéphana Dorval
+            <div className="flex items-center">
+              <Image
+                src="/stephana-logo-black-tight.png"
+                alt="Stephana Dorval logo"
+                width={1287}
+                height={445}
+                className="h-8 w-auto dark:hidden md:h-10"
+                priority
+              />
+              <Image
+                src="/stephana-logo-white-tight.png"
+                alt="Stephana Dorval logo"
+                width={1287}
+                height={445}
+                className="hidden h-8 w-auto dark:block md:h-10"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

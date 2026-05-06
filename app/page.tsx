@@ -136,20 +136,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="container mx-auto px-4 pb-8 md:pb-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
-            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
-              <Image src="/stephana-portrait-2.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
-            </div>
-            <div className="relative overflow-hidden rounded-xl" style={{ aspectRatio: "4 / 5" }}>
-              <Image src="/stephana-portrait-3.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 50vw, 33vw" />
-            </div>
-            <div className="relative overflow-hidden rounded-xl sm:col-span-2 lg:col-span-1" style={{ aspectRatio: "4 / 5" }}>
-              <Image src="/stephana-portrait-4.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw" />
-            </div>
-          </div>
-        </section>
-
         <section className="container mx-auto px-4 py-20 border-t border-border/50">
           <AnimatedSection>
             <div className="mb-16">

@@ -61,10 +61,10 @@ export const metadata: Metadata = {
       "Passionate Haitian author weaving intricate tales of human experience, cultural identity, and resilience. Author of Port-au-Prince: Mon brasier de ville and Siwomyèl ak Sèl.",
     images: [
       {
-        url: "/stephana.jpg",
+        url: "/social-card-logo.png",
         width: 1200,
         height: 630,
-        alt: "Stéphana Dorval - Haitian Author",
+        alt: "Stéphana Dorval",
       },
     ],
   },
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "Stéphana Dorval - Haitian Author & Literary Artist",
     description:
       "Passionate Haitian author weaving intricate tales of human experience, cultural identity, and resilience. Author of Port-au-Prince: Mon brasier de ville and Siwomyèl ak Sèl.",
-    images: ["/stephana.jpg"],
+    images: ["/social-card-logo.png"],
     creator: "@stephanadorval",
   },
   icons: {

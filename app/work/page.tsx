@@ -220,72 +220,98 @@ export default function WorkPage() {
         <section id="published" className="container mx-auto px-4 py-20 border-t border-border/50">
           <AnimatedSection>
             <div className="mb-16">
-              <h2 className="text-sm text-muted-foreground tracking-wide uppercase mb-2">{content.publishedWork}</h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-primary mb-2">{content.publishedWork}</h2>
             </div>
           </AnimatedSection>
 
           <div className="space-y-8 max-w-4xl">
             <AnimatedSection delay={100}>
               <div className="pb-8 border-b border-border/50 transition-all duration-300 hover:border-primary/30">
-                <h3 className="font-serif text-2xl mb-2">Port-au-Prince: Mon brasier de ville</h3>
-                <p className="text-muted-foreground mb-4">{content.cards.availableAt}</p>
-                <div className="flex flex-wrap gap-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
-                    asChild
-                  >
-                    <a
-                      href="https://www.lavantgardiste.net/fictions2707.php"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      {content.cards.review}
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
-                    asChild
-                  >
-                    <a
-                      href="https://lenouvelliste.com/article/249678/port-au-prince-sous-la-plume-de-stephana-dorval"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      {content.cards.article}
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
+                <div className="grid md:grid-cols-[220px_1fr] gap-6 items-start">
+                  <div className="relative overflow-hidden rounded-xl border border-border/70" style={{ aspectRatio: "1 / 1" }}>
+                    <Image
+                      src="/book-portauprince-cover.jpeg"
+                      alt="Port-au-Prince cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 220px"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-2xl mb-2">Port-au-Prince: Mon brasier de ville</h3>
+                    <p className="text-muted-foreground mb-4">{content.cards.availableAt}</p>
+                    <div className="flex flex-wrap gap-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
+                        asChild
+                      >
+                        <a
+                          href="https://www.lavantgardiste.net/fictions2707.php"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          {content.cards.review}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
+                        asChild
+                      >
+                        <a
+                          href="https://lenouvelliste.com/article/249678/port-au-prince-sous-la-plume-de-stephana-dorval"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          {content.cards.article}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
               <div className="pb-8 border-b border-border/50 transition-all duration-300 hover:border-primary/30">
-                <h3 className="font-serif text-2xl mb-2">Siwomyèl ak sèl</h3>
-                <p className="text-muted-foreground mb-4">{content.cards.poetryCollection}</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
-                  asChild
-                >
-                  <a
-                    href="https://a.co/d/2mQZhxw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
-                  >
-                    {content.cards.availableOnAmazon}
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                </Button>
+                <div className="grid md:grid-cols-[220px_1fr] gap-6 items-start">
+                  <div className="relative overflow-hidden rounded-xl border border-border/70" style={{ aspectRatio: "1 / 1" }}>
+                    <Image
+                      src="/book-siwomyel-beach.jpeg"
+                      alt="Siwomyel ak Sel cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 220px"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-2xl mb-2">Siwomyèl ak sèl</h3>
+                    <p className="text-muted-foreground mb-4">{content.cards.poetryCollection}</p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
+                      asChild
+                    >
+                      <a
+                        href="https://a.co/d/2mQZhxw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        {content.cards.availableOnAmazon}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
 
@@ -348,7 +374,7 @@ export default function WorkPage() {
           <AnimatedSection>
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "4 / 5" }}>
-                <Image src="/stephana-portrait-5.jpeg" alt={content.portraitAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src="/book-portauprince-open.jpeg" alt="Port-au-Prince publication visual" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-serif mb-4">{content.cards.readingsTitle}</h2>

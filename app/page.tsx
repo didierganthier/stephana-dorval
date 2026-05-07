@@ -122,7 +122,7 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden bg-muted/30 shadow-2xl ring-1 ring-border/60" style={{ aspectRatio: "4 / 5" }}>
                 <Image
-                  src="/stephana-portrait-1.jpeg"
+                  src="/stephana-portrait-3.jpeg"
                   alt={content.portraitAlt}
                   fill
                   className="object-cover"

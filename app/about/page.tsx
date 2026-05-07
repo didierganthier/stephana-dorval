@@ -20,7 +20,7 @@ export default function AboutPage() {
             "Saisir la complexité de la vie en Haïti à travers une prose poétique et une narration vibrante, en explorant la résilience, l'identité et la beauté de Port-au-Prince.",
           biography: "Biographie",
           biographyParagraphs: [
-            "Stéphana Dorval est née en 1998. Écrivaine profondément enracinée dans la culture et la littérature haïtiennes, elle puise dans une formation en littérature et en création littéraire pour faire dialoguer la vitalité de la vie haïtienne avec des thèmes universels de survie, d'identité et d'espoir.",
+            "Stéphana Dorval est née en 1998. Écrivaine profondément enracinée dans la culture et la littérature haïtiennes, elle fait dialoguer la vitalité de la vie haïtienne avec des thèmes universels de survie, d'identité et d'espoir.",
             "Elle débute par la poésie avec l'acclamé Siwomyèl ak Sèl, puis poursuit dans le roman avec Port-au-Prince: Mon brasier de ville. Stéphana est portée par le désir de donner voix à celles et ceux qu'on entend trop peu et de saisir l'essence d'Haïti dans toute sa complexité.",
           ],
           philosophy: "Démarche d'écriture",
